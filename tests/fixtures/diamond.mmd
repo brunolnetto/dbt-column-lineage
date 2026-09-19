@@ -1,0 +1,17 @@
+flowchart LR
+  n0["model:mart_diamond.total_id"]
+  n1["model:stg_customers_a.id"]
+  n2(["source:raw.customers.id<br/>[raw-source]"])
+  n3["model:stg_customers_b.id"]
+  n0 --> n1
+  n1 --> n2
+  n0 --> n3
+  n3 --> n2
+  classDef src fill:#cfe8ff,stroke:#5b9bd5
+  classDef issue fill:#fff3cd,stroke:#d4a017
+  classDef cyc fill:#ffd6d6,stroke:#cc4444
+  classDef mdl fill:#f2f2f2,stroke:#999999
+  classDef root stroke-width:3px
+  class n0,n1,n3 mdl
+  class n0 root
+  class n2 src

@@ -1,0 +1,24 @@
+flowchart LR
+  n0["model:mart_customers.customer_id"]
+  n1["model:stg_customers.id"]
+  n2(["source:raw.customers.id<br/>[raw-source]"])
+  n3["model:mart_customers.customer_email"]
+  n4["model:stg_customers.email"]
+  n5(["source:raw.customers.email<br/>[raw-source]"])
+  n6["model:mart_customers.customer_name"]
+  n7["model:stg_customers.name"]
+  n8(["source:raw.customers.name<br/>[raw-source]"])
+  n0 --> n1
+  n1 --> n2
+  n3 --> n4
+  n4 --> n5
+  n6 --> n7
+  n7 --> n8
+  classDef src fill:#cfe8ff,stroke:#5b9bd5
+  classDef issue fill:#fff3cd,stroke:#d4a017
+  classDef cyc fill:#ffd6d6,stroke:#cc4444
+  classDef mdl fill:#f2f2f2,stroke:#999999
+  classDef root stroke-width:3px
+  class n0,n1,n3,n4,n6,n7 mdl
+  class n0,n3,n6 root
+  class n2,n5,n8 src
